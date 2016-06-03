@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="libraries/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/app.css">
+        <script src="libraries/systemjs/system.src.js"></script>
+        <script src="libraries/angular2/angular2-polyfills.js"></script>
+        <script src="libraries/angular2/angular2.js"></script>
+        <script src="libraries/angular2/router.js"></script>
+        <script src="libraries/rxjs/Rx.js"></script>
+        <script>
+            System.config({
+                packages: {
+                    app: {
+                        format: 'register',
+                        defaultExtension: 'js'
+                    }
+                }
+            });
+
+            System.import ('app/app').then(null, console.error.bind(console));
+        </script>
+    </head>
+    <body>
+        <app>Loading...</app>
+    </body>
+</html>

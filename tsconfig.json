@@ -1,0 +1,18 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "system",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "removeComments": false,
+        "noImplicitAny": true,
+        "suppressImplicitAnyIndexErrors": true
+    },
+    "files": [
+        "app/eqwad-combo-box/eqwad-combo-box.ts",
+        "app/app.ts",
+        "app/app/app.component.ts"
+    ]
+}

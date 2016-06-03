@@ -1,0 +1,13 @@
+<div class="header">
+    <h1>Eqwad combo box</h1>
+    <eq-combo-box #fabricsComboBox
+        [items]=fabrics
+        [itemValueField]="'id'"
+        [itemTextField]="'name'"
+        [placeholder]="'Select fabric...'"
+        (onSelect)="select($event)"
+        (onOpen)="open()"
+        (onClose)="close()"
+    >
+    </eq-combo-box>
+</div>

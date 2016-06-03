@@ -1,1 +1,1 @@
-# eqwad-combo-box-demo
+# Eqwad combo box demo
