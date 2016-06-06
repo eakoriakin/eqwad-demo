@@ -10,7 +10,8 @@ app.set('views', __dirname + '/build');
 // Set routes.
 app.get('/', function(request, response) {
     // response.render('index');
-    response.sendFile('/build/index.html');
+    // response.sendFile('/build/index.html');
+    response.sendFile('index.html', { root: '/build' });
 });
 
 app.listen(app.get('port'), function() {
