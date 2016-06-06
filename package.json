@@ -23,10 +23,10 @@
         "es6-promise": "3.1.2",
         "es6-shim": "0.35.0",
         "rxjs": "5.0.0-beta.6",
-        "systemjs": "0.19.27"
+        "systemjs": "0.19.27",
+        "font-awesome": "4.5.0"
     },
     "devDependencies": {
-        "font-awesome": "4.5.0",
         "typescript": "1.8.10",
         "tslint": "3.9.0",
         "browser-sync": "2.12.7",
@@ -45,6 +45,6 @@
         "start": "node server.js"
     },
     "engines": {
-        "node": "0.12.7"
+        "node": "5.9.1"
     }
 }
