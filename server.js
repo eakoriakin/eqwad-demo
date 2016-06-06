@@ -7,7 +7,7 @@ app.use(express.static(__dirname + '/build'));
 // This redirects everything back to index.html (HTML5 pushstate).
 app.all('/*', function(request, response) {
     response.sendFile('index.html', {
-        root: __dirname + '/build'
+        root: '/build'
     });
 });
 
