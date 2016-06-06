@@ -11,7 +11,7 @@
         "comment-format": [
             true,
             "check-space",
-            "check-lowercase"
+            "check-uppercase"
         ],
         "curly": true,
         "eofline": true,

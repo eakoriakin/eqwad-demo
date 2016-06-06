@@ -1,5 +1,5 @@
 import { Component, ViewChild } from 'angular2/core';
-import { RouteConfig, ROUTER_DIRECTIVES } from 'angular2/router';
+import { ROUTER_DIRECTIVES } from 'angular2/router';
 import { EqwadComboBoxComponent } from '../eqwad-combo-box/eqwad-combo-box';
 
 @Component({
@@ -11,16 +11,25 @@ import { EqwadComboBoxComponent } from '../eqwad-combo-box/eqwad-combo-box';
     ]
 })
 export class AppComponent {
+    fabrics = [
+        { name: 'Cotton', id: '1' },
+        { name: 'Polyester', id: '2' },
+        { name: 'Cotton/Polyester', id: '3' },
+        { name: 'Rib Knit', id: '4' }
+    ];
+
     @ViewChild('fabricsComboBox') fabricsComboBox: any;
 
     constructor() {
-        // setTimeout(() => {
-        //     this.fabrics[0].name = 'Chrome';
-        // }, 2000);
+        /*
+        setTimeout(() => {
+            this.fabrics[0].name = 'Chrome';
+        }, 2000);
 
-        // setTimeout(() => {
-        //     this.fabricsComboBox.open();
-        // }, 3000);
+        setTimeout(() => {
+            this.fabricsComboBox.open();
+        }, 3000);
+        */
     }
 
     select(item: Object) {
@@ -34,11 +43,4 @@ export class AppComponent {
     close() {
         console.log('close');
     }
-
-    fabrics = [
-        { name: 'Cotton', id: '1' },
-        { name: 'Polyester', id: '2' },
-        { name: 'Cotton/Polyester', id: '3' },
-        { name: 'Rib Knit', id: '4' }
-    ];
 }

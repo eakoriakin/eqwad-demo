@@ -1,5 +1,4 @@
 import {Component, Input, Output, ViewChild, Renderer, OnDestroy, EventEmitter} from 'angular2/core';
-import {NgClass} from 'angular2/common';
 
 @Component({
     selector: 'eq-combo-box',
@@ -81,8 +80,7 @@ export class EqwadComboBoxComponent implements OnDestroy {
             this._setListWidth();
             this._isFocused = true;
             this.onOpen.emit(null);
-        }
-        else {
+        } else {
             this.onClose.emit(null);
         }
     }
