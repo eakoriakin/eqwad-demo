@@ -5,9 +5,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/build'));
 
 // Set views directory.
-// app.set('views', __dirname + '/build');
-app.set('views', __dirname);
-app.set('view engine', 'ejs');
+app.set('views', __dirname + '/build');
 
 // Set routes.
 app.get('/', function(request, response) {
