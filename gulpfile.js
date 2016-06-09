@@ -32,10 +32,6 @@ var build = function(complete) {
 }
 
 gulp.task('clean', function() {
-    // Create an empty distribution directory to avoid errors.
-    return gulp.src('/')
-        .pipe(gulp.dest(paths.build.root));
-
     del.sync([paths.build.root + '/**/*', '!' + paths.build.root]);
 });
 
@@ -46,7 +42,7 @@ gulp.task('copy-libraries', ['clean'], function() {
         .pipe(gulp.dest(paths.build.libraries + '/font-awesome'));
 
     gulp.src([
-            'node_modules/eqwad-combo-box/source/eqwad-combo-box.js',
+            'node_modules/eqwad-combo-box/build/**/*'
         ])
         .pipe(gulp.dest(paths.build.libraries + '/eqwad-combo-box'));
 
