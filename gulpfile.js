@@ -46,6 +46,11 @@ gulp.task('copy-libraries', ['clean'], function() {
         .pipe(gulp.dest(paths.build.libraries + '/font-awesome'));
 
     gulp.src([
+            'node_modules/eqwad-combo-box/source/eqwad-combo-box.js',
+        ])
+        .pipe(gulp.dest(paths.build.libraries + '/eqwad-combo-box'));
+
+    gulp.src([
             'node_modules/angular2/bundles/angular2-polyfills.js',
             'node_modules/angular2/bundles/angular2.js',
             'node_modules/angular2/bundles/router.js',

@@ -1,6 +1,6 @@
 import { Component, ViewChild } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
-import { EqwadComboBoxComponent } from '../eqwad-combo-box/eqwad-combo-box';
+import { EqwadComboBoxComponent } from 'eqwad-combo-box/eqwad-combo-box';
 
 @Component({
     selector: 'app',
