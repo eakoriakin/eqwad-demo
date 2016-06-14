@@ -61,7 +61,7 @@ System.register(['angular2/core', 'angular2/router', 'eqwad-combo-box'], functio
                         templateUrl: 'app/app/app.component.html',
                         directives: [
                             router_1.ROUTER_DIRECTIVES,
-                            eqwad_combo_box_1.EqwadComboBoxComponent
+                            eqwad_combo_box_1.EqwadComboBox
                         ]
                     }), 
                     __metadata('design:paramtypes', [])

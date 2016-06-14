@@ -11,6 +11,7 @@
         "suppressImplicitAnyIndexErrors": true
     },
     "files": [
+        "node_modules/angular2/typings/browser.d.ts",
         "app/eqwad-combo-box/eqwad-combo-box.ts",
         "app/app.ts",
         "app/app/app.component.ts"

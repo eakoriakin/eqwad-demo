@@ -41,10 +41,12 @@ gulp.task('copy-libraries', ['clean'], function() {
         ])
         .pipe(gulp.dest(paths.build.libraries + '/font-awesome'));
 
-    gulp.src([
-            'node_modules/eqwad-combo-box/build/**/*'
-        ])
-        .pipe(gulp.dest(paths.build.libraries + '/eqwad-combo-box'));
+        gulp.src([
+                'node_modules/eqwad-combo-box/eqwad-combo-box.css',
+                'node_modules/eqwad-combo-box/eqwad-combo-box.js',
+                'node_modules/eqwad-combo-box/eqwad-combo-box.js.map'
+            ])
+            .pipe(gulp.dest(paths.build.libraries + '/eqwad-combo-box'));
 
     gulp.src([
             'node_modules/angular2/bundles/angular2-polyfills.js',

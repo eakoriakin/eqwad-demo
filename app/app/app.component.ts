@@ -1,13 +1,13 @@
 import { Component, ViewChild } from 'angular2/core';
 import { ROUTER_DIRECTIVES } from 'angular2/router';
-import { EqwadComboBoxComponent } from 'eqwad-combo-box';
+import { EqwadComboBox } from 'eqwad-combo-box';
 
 @Component({
     selector: 'app',
     templateUrl: 'app/app/app.component.html',
     directives: [
         ROUTER_DIRECTIVES,
-        EqwadComboBoxComponent
+        EqwadComboBox
     ]
 })
 export class AppComponent {
