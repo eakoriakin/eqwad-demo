@@ -1,5 +1,5 @@
 <div class="header">
-    <h1>Eqwad combo box</h1>
+    <h1>Eqwad ComboBox Demo</h1>
     <eq-combo-box #fabricsComboBox
         [items]=fabrics
         [itemValueField]="'id'"
@@ -7,7 +7,6 @@
         [placeholder]="'Select fabric...'"
         (onSelect)="select($event)"
         (onOpen)="open()"
-        (onClose)="close()"
-    >
+        (onClose)="close()">
     </eq-combo-box>
 </div>

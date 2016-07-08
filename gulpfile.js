@@ -28,7 +28,7 @@ const paths = {
 }
 
 var build = function(complete) {
-    runSequence('clean', ['copy-libraries', 'check-js', 'copy-js', 'copy-css', 'copy-html'], complete);
+    runSequence('clean', 'copy-libraries', ['check-js', 'copy-js', 'copy-css', 'copy-html'], complete);
 }
 
 gulp.task('clean', function() {

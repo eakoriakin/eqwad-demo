@@ -32,15 +32,6 @@ System.register(['angular2/core', 'angular2/router', 'eqwad-combo-box'], functio
                         { name: 'Cotton/Polyester', id: '3' },
                         { name: 'Rib Knit', id: '4' }
                     ];
-                    /*
-                    setTimeout(() => {
-                        this.fabrics[0].name = 'Chrome';
-                    }, 2000);
-            
-                    setTimeout(() => {
-                        this.fabricsComboBox.open();
-                    }, 3000);
-                    */
                 }
                 AppComponent.prototype.select = function (item) {
                     console.log('select:', item);
@@ -53,7 +44,7 @@ System.register(['angular2/core', 'angular2/router', 'eqwad-combo-box'], functio
                 };
                 __decorate([
                     core_1.ViewChild('fabricsComboBox'), 
-                    __metadata('design:type', Object)
+                    __metadata('design:type', eqwad_combo_box_1.EqwadComboBox)
                 ], AppComponent.prototype, "fabricsComboBox", void 0);
                 AppComponent = __decorate([
                     core_1.Component({

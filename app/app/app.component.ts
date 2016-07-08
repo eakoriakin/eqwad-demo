@@ -18,18 +18,10 @@ export class AppComponent {
         { name: 'Rib Knit', id: '4' }
     ];
 
-    @ViewChild('fabricsComboBox') fabricsComboBox: any;
+    @ViewChild('fabricsComboBox') fabricsComboBox: EqwadComboBox;
 
     constructor() {
-        /*
-        setTimeout(() => {
-            this.fabrics[0].name = 'Chrome';
-        }, 2000);
 
-        setTimeout(() => {
-            this.fabricsComboBox.open();
-        }, 3000);
-        */
     }
 
     select(item: Object) {
