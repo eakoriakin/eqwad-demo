@@ -13,7 +13,7 @@ const gulp = require('gulp'),
 const paths = {
     source: {
         css: 'app/**/*.less',
-        js: 'app/**/*.ts',
+        ts: 'app/**/*.ts',
         html: ['app/**/*.html', '!app/index.html'],
         index: 'app/index.html',
         config: ['tsconfig.json']
@@ -24,11 +24,22 @@ const paths = {
         js: 'build',
         html: 'build/app',
         libraries: 'build/libraries'
+    },
+    packages: {
+        'eqwad-combo-box': [
+            'node_modules/eqwad-combo-box/eqwad-combo-box.css',
+            'node_modules/eqwad-combo-box/eqwad-combo-box.js',
+            'node_modules/eqwad-combo-box/eqwad-combo-box.js.map',
+            'node_modules/eqwad-combo-box/eqwad-combo-box-filter.pipe.js',
+            'node_modules/eqwad-combo-box/eqwad-combo-box-filter.pipe.js.map',
+            'node_modules/eqwad-combo-box/eqwad-combo-box.component.js',
+            'node_modules/eqwad-combo-box/eqwad-combo-box.component.js.map'
+        ]
     }
 }
 
 var build = function(complete) {
-    runSequence('clean', 'copy-libraries', ['check-js', 'copy-js', 'copy-css', 'copy-html'], complete);
+    runSequence('clean', 'copy-libraries', ['check-ts', 'copy-js', 'copy-css', 'copy-html'], complete);
 }
 
 gulp.task('clean', function() {
@@ -41,12 +52,8 @@ gulp.task('copy-libraries', ['clean'], function() {
         ])
         .pipe(gulp.dest(paths.build.libraries + '/font-awesome'));
 
-        gulp.src([
-                'node_modules/eqwad-combo-box/eqwad-combo-box.css',
-                'node_modules/eqwad-combo-box/eqwad-combo-box.js',
-                'node_modules/eqwad-combo-box/eqwad-combo-box.js.map'
-            ])
-            .pipe(gulp.dest(paths.build.libraries + '/eqwad-combo-box'));
+    gulp.src(paths.packages['eqwad-combo-box'])
+        .pipe(gulp.dest(paths.build.libraries + '/eqwad-combo-box'));
 
     gulp.src([
             'node_modules/angular2/bundles/angular2-polyfills.js',
@@ -94,10 +101,14 @@ gulp.task('copy-css', function() {
         .pipe(browserSync.stream());
 });
 
-gulp.task('check-js', function() {
-    return gulp.src(paths.source.js)
-        .pipe(tslint())
-        .pipe(tslint.report('verbose'));
+gulp.task('check-ts', function() {
+    return gulp.src(paths.source.ts)
+        .pipe(tslint({
+            formatter: 'verbose'
+        }))
+        .pipe(tslint.report({
+            emitError: false
+        }));
 });
 
 gulp.task('build', function() {
@@ -119,12 +130,17 @@ gulp.task('start', function() {
         gulp.watch([paths.source.html, paths.source.index], ['copy-html', browserSync.reload]);
 
         // Watch JS files.
-        gulp.watch(paths.source.js).on('change', function() {
+        gulp.watch(paths.source.ts).on('change', function() {
             build(browserSync.reload);
         });
 
         // Watch configuration files.
         gulp.watch(paths.source.config).on('change', function() {
+            build(browserSync.reload);
+        });
+
+        // Watch eqwad-combo-box.
+        gulp.watch(paths.packages['eqwad-combo-box']).on('change', function() {
             build(browserSync.reload);
         });
     });

@@ -14,13 +14,15 @@
             System.config({
                 packages: {
                     app: {
-                        format: 'register',
-                        defaultExtension: 'js'
+                        format: 'register'
+
                     },
-                    'eqwad-combo-box': {}
+                    './libraries/eqwad-combo-box/': {
+                        defaultExtension: 'js'
+                    }
                 },
                 map: {
-                    'eqwad-combo-box': 'libraries/eqwad-combo-box/eqwad-combo-box.js'
+                    'eqwad-combo-box': 'libraries/eqwad-combo-box/eqwad-combo-box'
                 }
             });
 

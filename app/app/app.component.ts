@@ -20,10 +20,6 @@ export class AppComponent {
 
     @ViewChild('fabricsComboBox') fabricsComboBox: EqwadComboBox;
 
-    constructor() {
-
-    }
-
     select(item: Object) {
         console.log('select:', item);
     }
