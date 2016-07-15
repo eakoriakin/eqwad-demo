@@ -19,7 +19,7 @@ var EqwadComboBox = (function () {
         this.onOpen = new core_1.EventEmitter();
         this.onClose = new core_1.EventEmitter();
         this.value = [];
-        this.text = '';
+        this._text = '';
         this._isOpened = false;
         this._isFocused = false;
         this._isHovered = false;
@@ -38,6 +38,7 @@ var EqwadComboBox = (function () {
         this._documentClickListener();
     };
     EqwadComboBox.prototype.open = function () {
+        this._checkItems();
         this._positionList();
         this._isOpened = true;
     };
@@ -45,6 +46,7 @@ var EqwadComboBox = (function () {
         this._isOpened = false;
     };
     EqwadComboBox.prototype._open = function () {
+        this._checkItems();
         this._isOpened = !this._isOpened;
         if (this._isOpened) {
             this._positionList();
@@ -81,6 +83,13 @@ var EqwadComboBox = (function () {
     EqwadComboBox.prototype._positionList = function () {
         this.listElement.nativeElement.style.width = this.comboBoxElement.nativeElement.offsetWidth + 'px';
         this.listElement.nativeElement.style.left = this.comboBoxElement.nativeElement.offsetLeft + 'px';
+    };
+    EqwadComboBox.prototype._textChange = function (text) {
+        this._text = text;
+        this._checkItems();
+    };
+    EqwadComboBox.prototype._checkItems = function () {
+        this._hasItems = new eqwad_combo_box_filter_pipe_1.EqwadComboBoxFilter().transform(this.items, this.itemTextField, this._text).length > 0;
     };
     __decorate([
         core_1.Input(), 
@@ -126,7 +135,7 @@ var EqwadComboBox = (function () {
         core_1.Component({
             selector: 'eq-combo-box',
             pipes: [eqwad_combo_box_filter_pipe_1.EqwadComboBoxFilter],
-            template: "\n        <div class=\"eq-combo-box\" #comboBoxElement\n            [ngClass]=\"{ 'eq-combo-box_is-opened': _isOpened, 'eq-combo-box_is-focused': _isFocused }\"\n            (mouseenter)=\"_mouseenter()\"\n            (mouseleave)=\"_mouseleave()\">\n            <div class=\"eq-combo-box__wrapper\">\n                <input class=\"eq-combo-box__text\" #textElement\n                    type=\"text\"\n                    autocomplete=\"off\"\n                    [(ngModel)]=\"text\"\n                    [placeholder]=\"placeholder\"/>\n                <div class=\"eq-combo-box__open\" (click)=\"_open()\">\n                    <i class=\"fa fa-caret-down\"></i>\n                </div>\n            </div>\n        </div>\n        <div class=\"eq-combo-box-list\" #listElement\n            [ngClass]=\"{ 'eq-combo-box-list_is-opened': _isOpened, 'eq-combo-box-list_is-focused': _isFocused }\"\n            (mouseenter)=\"_mouseenter()\"\n            (mouseleave)=\"_mouseleave()\">\n            <div class=\"eq-combo-box-list__item\"\n                *ngFor=\"let item of (items | eqwadComboBoxFilter:itemTextField:text)\"\n                (click)=\"_select(item, $event)\">\n                {{item[itemTextField]}}\n            </div>\n        </div>\n    "
+            template: "\n        <div class=\"eq-combo-box\" #comboBoxElement\n            [ngClass]=\"{\n                'eq-combo-box_is-opened': _isOpened,\n                'eq-combo-box_is-focused': _isFocused,\n                'eq-combo-box_has-items': _hasItems\n            }\"\n            (mouseenter)=\"_mouseenter()\"\n            (mouseleave)=\"_mouseleave()\">\n            <div class=\"eq-combo-box__wrapper\">\n                <input class=\"eq-combo-box__text\" #textElement\n                    type=\"text\"\n                    autocomplete=\"off\"\n                    [ngModel]=\"_text\"\n                    (ngModelChange)=\"_textChange($event)\"\n                    [placeholder]=\"placeholder\"/>\n                <div class=\"eq-combo-box__open\" (click)=\"_open()\">\n                    <i class=\"fa fa-caret-down\"></i>\n                </div>\n            </div>\n        </div>\n        <div class=\"eq-combo-box-list\" #listElement\n            [ngClass]=\"{\n                'eq-combo-box-list_is-opened': _isOpened,\n                'eq-combo-box-list_is-focused': _isFocused,\n                'eq-combo-box-list_has-items': _hasItems\n            }\"\n            (mouseenter)=\"_mouseenter()\"\n            (mouseleave)=\"_mouseleave()\">\n            <div class=\"eq-combo-box-list__item\"\n                *ngFor=\"let item of (items | eqwadComboBoxFilter:itemTextField:_text)\"\n                (click)=\"_select(item, $event)\">\n                {{item[itemTextField]}}\n            </div>\n        </div>\n    "
         }), 
         __metadata('design:paramtypes', [(typeof (_d = typeof core_1.Renderer !== 'undefined' && core_1.Renderer) === 'function' && _d) || Object])
     ], EqwadComboBox);
