@@ -27,12 +27,7 @@ const paths = {
     packages: {
         'eqwad-combo-box': [
             'node_modules/eqwad-combo-box/eqwad-combo-box.css',
-            'node_modules/eqwad-combo-box/eqwad-combo-box.js',
-            'node_modules/eqwad-combo-box/eqwad-combo-box.js.map',
-            'node_modules/eqwad-combo-box/eqwad-combo-box-filter.pipe.js',
-            'node_modules/eqwad-combo-box/eqwad-combo-box-filter.pipe.js.map',
-            'node_modules/eqwad-combo-box/eqwad-combo-box.component.js',
-            'node_modules/eqwad-combo-box/eqwad-combo-box.component.js.map'
+            'node_modules/eqwad-combo-box/eqwad-combo-box.js'
         ]
     }
 }
@@ -113,9 +108,9 @@ gulp.task('start', function() {
         });
 
         // Watch eqwad-combo-box.
-        // gulp.watch(paths.packages['eqwad-combo-box']).on('change', function() {
-        //     build(browserSync.reload);
-        // });
+        gulp.watch(paths.packages['eqwad-combo-box']).on('change', function() {
+            browserSync.reload();
+        });
     });
 });
 
