@@ -23,7 +23,6 @@ const paths = {
         css: 'build/css',
         js: 'build',
         html: 'build/app'
-        // libraries: 'build/libraries'
     },
     packages: {
         'eqwad-combo-box': [
@@ -39,40 +38,12 @@ const paths = {
 }
 
 var build = function(complete) {
-    // runSequence('clean', 'copy-libraries', ['check-ts', 'copy-js', 'copy-css', 'copy-html'], complete);
     runSequence('clean', ['check-ts', 'copy-js', 'copy-css', 'copy-html'], complete);
 }
 
 gulp.task('clean', function() {
     del.sync([paths.build.root + '/**/*', '!' + paths.build.root]);
 });
-
-// gulp.task('copy-libraries', ['clean'], function() {
-//     gulp.src([
-//             'node_modules/font-awesome/**/*'
-//         ])
-//         .pipe(gulp.dest(paths.build.libraries + '/font-awesome'));
-//
-//     gulp.src(paths.packages['eqwad-combo-box'])
-//         .pipe(gulp.dest(paths.build.libraries + '/eqwad-combo-box'));
-//
-//     gulp.src([
-//             'node_modules/angular2/bundles/angular2-polyfills.js',
-//             'node_modules/angular2/bundles/angular2.js',
-//             'node_modules/angular2/bundles/router.js',
-//         ])
-//         .pipe(gulp.dest(paths.build.libraries + '/angular2'));
-//
-//     gulp.src([
-//             'node_modules/systemjs/dist/system.src.js'
-//         ])
-//         .pipe(gulp.dest(paths.build.libraries + '/systemjs'));
-//
-//     return gulp.src([
-//             'node_modules/rxjs/bundles/Rx.js'
-//         ])
-//         .pipe(gulp.dest(paths.build.libraries + '/rxjs'));
-// });
 
 gulp.task('copy-html', function() {
     gulp.src(paths.source.index)
@@ -124,13 +95,6 @@ gulp.task('start', function() {
                 baseDir: './'
             }
         });
-
-        // browserSync.init({
-        //     startPath: 'app/',
-        //     server: {
-        //         baseDir: './'
-        //     }
-        // });
 
         // Watch CSS files.
         gulp.watch(paths.source.css, ['copy-css']);
