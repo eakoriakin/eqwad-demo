@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>Eqwad ComboBox Demo</title>
-        <link rel="stylesheet" href="libraries/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="libraries/eqwad-combo-box/eqwad-combo-box.css">
+        <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../node_modules/eqwad-combo-box/eqwad-combo-box.css">
         <link rel="stylesheet" href="css/app.css">
-        <script src="libraries/systemjs/system.src.js"></script>
-        <script src="libraries/angular2/angular2-polyfills.js"></script>
-        <script src="libraries/angular2/angular2.js"></script>
-        <script src="libraries/angular2/router.js"></script>
-        <script src="libraries/rxjs/Rx.js"></script>
+        <script src="../node_modules/systemjs/dist/system.src.js"></script>
+        <script src="../node_modules/angular2/bundles/angular2-polyfills.js"></script>
+        <script src="../node_modules/angular2/bundles/angular2.js"></script>
+        <script src="../node_modules/angular2/bundles/router.js"></script>
+        <script src="../node_modules/rxjs/bundles/Rx.js"></script>
         <script>
             System.config({
                 packages: {
@@ -17,12 +17,16 @@
                         format: 'register'
 
                     },
-                    './libraries/eqwad-combo-box/': {
+                    // './libraries/eqwad-combo-box/': {
+                    //     defaultExtension: 'js'
+                    // }
+                    '../node_modules/eqwad-combo-box/': {
                         defaultExtension: 'js'
                     }
                 },
                 map: {
-                    'eqwad-combo-box': 'libraries/eqwad-combo-box/eqwad-combo-box'
+                    // 'eqwad-combo-box': 'libraries/eqwad-combo-box/eqwad-combo-box'
+                    'eqwad-combo-box': '../node_modules/eqwad-combo-box/eqwad-combo-box'
                 }
             });
 
