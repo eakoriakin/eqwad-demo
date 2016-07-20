@@ -1,6 +1,9 @@
 <div class="header">
     <h1>Eqwad ComboBox Demo</h1>
-    Fabrics: <eq-combo-box #fabricsComboBox
+    <div>
+        Fabrics:
+    </div>
+    <eq-combo-box #fabricsComboBox
         [items]=fabrics
         [itemValueField]="'id'"
         [itemTextField]="'name'"
@@ -9,4 +12,7 @@
         (onOpen)="open()"
         (onClose)="close()">
     </eq-combo-box>
+    <div>
+        Selected value: {{fabricsComboBox.value | json}}
+    </div>
 </div>
