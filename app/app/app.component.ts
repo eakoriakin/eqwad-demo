@@ -17,8 +17,16 @@ export class AppComponent {
         { name: 'Cotton/Polyester', id: '3' },
         { name: 'Rib Knit', id: '4' }
     ];
+    fabric = { name: 'Polyester', id: '2' };
 
     @ViewChild('fabricsComboBox') fabricsComboBox: EqwadComboBox;
+
+
+    constructor() {
+        // setTimeout(() => {
+        //     let itemTextField = this.fabricsComboBox.itemTextField;
+        // }, 1000);
+    }
 
     select(item: Object) {
         console.log('select:', item);

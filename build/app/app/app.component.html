@@ -1,9 +1,13 @@
 <div class="header">
     <h1>Eqwad ComboBox Demo</h1>
     <div>
+        <h2>Combo box</h2>
+    </div>
+    <div>
         Fabrics:
     </div>
     <eq-combo-box #fabricsComboBox
+        [value]=fabric
         [items]=fabrics
         [itemValueField]="'id'"
         [itemTextField]="'name'"
@@ -15,4 +19,19 @@
     <div>
         Selected value: {{fabricsComboBox.value | json}}
     </div>
+    <br />
+    <div>
+        <h2>Disabled</h2>
+    </div>
+    <eq-combo-box #fabricsComboBox
+        [isEnabled]=false
+        [value]=fabric
+        [items]=fabrics
+        [itemValueField]="'id'"
+        [itemTextField]="'name'"
+        [placeholder]="'Select fabric...'"
+        (onSelect)="select($event)"
+        (onOpen)="open()"
+        (onClose)="close()">
+    </eq-combo-box>
 </div>

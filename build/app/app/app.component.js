@@ -32,6 +32,10 @@ System.register(['angular2/core', 'angular2/router', 'eqwad-combo-box'], functio
                         { name: 'Cotton/Polyester', id: '3' },
                         { name: 'Rib Knit', id: '4' }
                     ];
+                    this.fabric = { name: 'Polyester', id: '2' };
+                    // setTimeout(() => {
+                    //     let itemTextField = this.fabricsComboBox.itemTextField;
+                    // }, 1000);
                 }
                 AppComponent.prototype.select = function (item) {
                     console.log('select:', item);
