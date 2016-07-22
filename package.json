@@ -1,9 +1,9 @@
 {
-    "version": "0.0.3",
-    "name": "eqwad-combo-box-demo",
-    "title": "Eqwad ComboBox demo",
-    "description": "Eqwad ComboBox demo.",
-    "homepage": "https://github.com/eakoryakin/eqwad-combo-box-demo",
+    "version": "0.1.0",
+    "name": "eqwad-demo",
+    "title": "Eqwad demo",
+    "description": "Eqwad demo.",
+    "homepage": "https://github.com/eakoryakin/eqwad-demo",
     "author": {
         "name": "Evgenii Koriakin",
         "url": "https://github.com/eakoryakin"
@@ -11,11 +11,11 @@
     "license": "(MIT OR Apache-2.0)",
     "repository": {
         "type": "git",
-        "url": "https://github.com/eakoryakin/eqwad-combo-box-demo.git"
+        "url": "https://github.com/eakoryakin/eqwad-demo.git"
     },
     "keywords": [],
     "bugs": {
-        "url": "https://github.com/eakoryakin/eqwad-combo-box-demo/issues"
+        "url": "https://github.com/eakoryakin/eqwad-demo/issues"
     },
     "dependencies": {
         "express": "4.13.3",
@@ -26,7 +26,8 @@
         "systemjs": "0.19.27",
         "reflect-metadata": "0.1.2",
         "zone.js": "0.6.12",
-        "eqwad-combo-box": "0.4.0"
+        "eqwad-combo-box": "0.4.0",
+        "font-awesome": ">=4.5.0"
     },
     "devDependencies": {
         "typescript": "1.8.10",
