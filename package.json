@@ -26,7 +26,7 @@
         "systemjs": "0.19.27",
         "reflect-metadata": "0.1.2",
         "zone.js": "0.6.12",
-        "eqwad-combo-box": "0.4.0",
+        "eqwad-combo-box": "0.4.1",
         "font-awesome": ">=4.5.0"
     },
     "devDependencies": {

@@ -3,33 +3,30 @@
     <div>
         <h2>Basic</h2>
     </div>
-    <div>
-        Fabrics:
-    </div>
-    <eq-combo-box #fabricsComboBox
-        [value]=fabric
-        [items]=fabrics
-        [itemValueField]="'id'"
+    <eq-combo-box #countriesComboBox
+        [value]=country
+        [items]=countries
+        [itemValueField]="'code'"
         [itemTextField]="'name'"
-        [placeholder]="'Select fabric...'"
+        [placeholder]="'Select country...'"
         (onSelect)="select($event)"
         (onOpen)="open()"
         (onClose)="close()">
     </eq-combo-box>
     <div>
-        Selected value: {{fabricsComboBox.value | json}}
+        Selected value: {{countriesComboBox.value | json}}
     </div>
     <br />
     <div>
         <h2>Disabled</h2>
     </div>
-    <eq-combo-box #fabricsComboBox
+    <eq-combo-box #countriesComboBox
         [isEnabled]=false
-        [value]=fabric
-        [items]=fabrics
+        [value]=country
+        [items]=countries
         [itemValueField]="'id'"
         [itemTextField]="'name'"
-        [placeholder]="'Select fabric...'"
+        [placeholder]="'Select country...'"
         (onSelect)="select($event)"
         (onOpen)="open()"
         (onClose)="close()">
