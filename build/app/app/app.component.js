@@ -33,6 +33,7 @@ System.register(['angular2/core', 'angular2/router', 'eqwad-combo-box'], functio
                     // }, 1000);
                 }
                 AppComponent.prototype.select = function (item) {
+                    this.country = item;
                     console.log('select:', item);
                 };
                 AppComponent.prototype.open = function () {

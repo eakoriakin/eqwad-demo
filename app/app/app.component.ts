@@ -16,7 +16,6 @@ export class AppComponent {
 
     @ViewChild('countriesComboBox') countriesComboBox: EqwadComboBox;
 
-
     constructor() {
         this.countries = this.getCountries();
         this.country = this.countries[0];
@@ -26,6 +25,7 @@ export class AppComponent {
     }
 
     select(item: Object) {
+        this.country = item;
         console.log('select:', item);
     }
 
