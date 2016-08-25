@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<head class="app">
     <head>
-        <title>Eqwad demo</title>
+        <title>Eqwad Demo</title>
         <link rel="stylesheet" href="../node_modules/font-awesome/css/font-awesome.min.css">
         <link rel="stylesheet" href="../node_modules/eqwad-combo-box/eqwad-combo-box.css">
         <link rel="stylesheet" href="css/app.css">
@@ -28,7 +28,12 @@
             System.import ('app/app').then(null, console.error.bind(console));
         </script>
     </head>
-    <body>
-        <app>Loading...</app>
+    <body class="app__body">
+        <div class="app__header">
+            <h1>Eqwad ComboBox</h1>
+        </div>
+        <div class="app__inner">
+            <app>Loading...</app>
+        </div>
     </body>
 </html>

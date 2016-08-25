@@ -12,20 +12,39 @@ import { EqwadComboBox } from 'eqwad-combo-box';
 })
 export class AppComponent {
     countries: Array<Object>;
-    country: Object;
+    basicCountry: Object;
+    preselectedCountry: Object;
+    disabledCountry: Object;
 
-    @ViewChild('countriesComboBox') countriesComboBox: EqwadComboBox;
+    @ViewChild('basicComboBox') basicComboBox: EqwadComboBox;
+    @ViewChild('preselectedComboBox') preselectedComboBox: EqwadComboBox;
 
     constructor() {
         this.countries = this.getCountries();
-        this.country = this.countries[0];
+        this.preselectedCountry = this.countries[1];
+        this.disabledCountry = this.countries[0];
         // setTimeout(() => {
-        //     let itemTextField = this.countriesComboBox.itemTextField;
-        // }, 1000);
+        //     // let itemTextField = this.preselectedComboBox.itemTextField;
+        //     console.log('value:', this.basicComboBox.value);
+        // }, 4000);
+    }
+
+    // Basic.
+    basicSetValue() {
+        this.basicCountry = this.countries[0];
+    }
+
+    basicClearValue() {
+        this.basicCountry = null;
+    }
+
+    basicOnSelect(item: Object) {
+        console.log('select:', item);
+        this.basicCountry = item;
     }
 
     select(item: Object) {
-        this.country = item;
+        this.preselectedCountry = item;
         console.log('select:', item);
     }
 

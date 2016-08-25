@@ -1,34 +1,59 @@
-<div class="header">
-    <h1>ComboBox</h1>
-    <div>
+<div class="nodes nodes_padding-bottom_m">
+    <div class="nodes__item">
+        A customizable select box for Angular2 (<a href="https://github.com/eakoriakin/eqwad-combo-box">API reference</a>).
+    </div>
+    <div class="nodes__item">
         <h2>Basic</h2>
     </div>
-    <eq-combo-box #countriesComboBox
-        [value]=country
-        [items]=countries
-        [itemValueField]="'code'"
-        [itemTextField]="'name'"
-        [placeholder]="'Select country...'"
-        (onSelect)="select($event)"
-        (onOpen)="open()"
-        (onClose)="close()">
-    </eq-combo-box>
-    <div>
-        Selected value: {{country | json}}
+    <div class="nodes__item">
+        <eq-combo-box #basicComboBox
+            [value]="basicCountry"
+            [items]="countries"
+            [itemValueField]="'code'"
+            [itemTextField]="'name'"
+            [placeholder]="'Select country...'"
+            (onSelect)="basicOnSelect($event)">
+        </eq-combo-box>
     </div>
-    <br />
-    <div>
+    <div class="nodes__item">
+        value: {{basicCountry | json}}
+    </div>
+    <div class="nodes__item nodes__item_links">
+        <a (click)="basicSetValue()">Set value</a>
+        <a (click)="basicClearValue()">Clear value</a>
+    </div>
+    <div class="nodes__item">
+        <h2>Preselected value</h2>
+    </div>
+    <div class="nodes__item">
+        <eq-combo-box #preselectedComboBox
+            [value]="preselectedCountry"
+            [items]="countries"
+            [itemValueField]="'code'"
+            [itemTextField]="'name'"
+            [placeholder]="'Select country...'"
+            (onSelect)="select($event)"
+            (onOpen)="open()"
+            (onClose)="close()">
+        </eq-combo-box>
+    </div>
+    <div class="nodes__item">
+        value: {{preselectedCountry | json}}
+    </div>
+    <div class="nodes__item">
         <h2>Disabled</h2>
     </div>
-    <eq-combo-box #countriesComboBox
-        [isEnabled]=false
-        [value]=country
-        [items]=countries
-        [itemValueField]="'id'"
-        [itemTextField]="'name'"
-        [placeholder]="'Select country...'"
-        (onSelect)="select($event)"
-        (onOpen)="open()"
-        (onClose)="close()">
-    </eq-combo-box>
+    <div class="nodes__item">
+        <eq-combo-box #preselectedComboBox
+            [isEnabled]=false
+            [value]="disabledCountry"
+            [items]="countries"
+            [itemValueField]="'id'"
+            [itemTextField]="'name'"
+            [placeholder]="'Select country...'"
+            (onSelect)="select($event)"
+            (onOpen)="open()"
+            (onClose)="close()">
+        </eq-combo-box>
+    </div>
 </div>

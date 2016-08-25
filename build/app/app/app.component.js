@@ -27,13 +27,26 @@ System.register(['angular2/core', 'angular2/router', 'eqwad-combo-box'], functio
             AppComponent = (function () {
                 function AppComponent() {
                     this.countries = this.getCountries();
-                    this.country = this.countries[0];
+                    this.preselectedCountry = this.countries[1];
+                    this.disabledCountry = this.countries[0];
                     // setTimeout(() => {
-                    //     let itemTextField = this.countriesComboBox.itemTextField;
-                    // }, 1000);
+                    //     // let itemTextField = this.preselectedComboBox.itemTextField;
+                    //     console.log('value:', this.basicComboBox.value);
+                    // }, 4000);
                 }
+                // Basic.
+                AppComponent.prototype.basicSetValue = function () {
+                    this.basicCountry = this.countries[0];
+                };
+                AppComponent.prototype.basicClearValue = function () {
+                    this.basicCountry = null;
+                };
+                AppComponent.prototype.basicOnSelect = function (item) {
+                    console.log('select:', item);
+                    this.basicCountry = item;
+                };
                 AppComponent.prototype.select = function (item) {
-                    this.country = item;
+                    this.preselectedCountry = item;
                     console.log('select:', item);
                 };
                 AppComponent.prototype.open = function () {
@@ -290,9 +303,13 @@ System.register(['angular2/core', 'angular2/router', 'eqwad-combo-box'], functio
                     ];
                 };
                 __decorate([
-                    core_1.ViewChild('countriesComboBox'), 
+                    core_1.ViewChild('basicComboBox'), 
                     __metadata('design:type', eqwad_combo_box_1.EqwadComboBox)
-                ], AppComponent.prototype, "countriesComboBox", void 0);
+                ], AppComponent.prototype, "basicComboBox", void 0);
+                __decorate([
+                    core_1.ViewChild('preselectedComboBox'), 
+                    __metadata('design:type', eqwad_combo_box_1.EqwadComboBox)
+                ], AppComponent.prototype, "preselectedComboBox", void 0);
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'app',
